@@ -1,35 +1,118 @@
-const point = prompt('Nhập số điểm ');
-const pointInt = parseInt(point);
-console.log('pointInt', typeof pointInt, pointInt);
+window.addEventListener('DOMContentLoaded',() => {
 
-var dem_X=0
-var dem_O=0
+    const point = prompt('Mời nhập số điểm',0);
+    console.log('point',typeof point,point);
 
-let board = ['', '', '', '', '', '', '', '', ''];
-let isGameActive = true;
+    const cells = Array.from(document.querySelectorAll('.cell'));
+    const resetButton = document.querySelector('#reset');
+    const announcer = document.querySelector('.announcer');
 
-const PLAYERX_WON = 'X THẮNG';
-const PLAYERO_WON = 'O THẮNG';
+    let board = ['','','','','','','','',''];
+    let currentPlayer = 'X';
+    let isGameActive = true;
+
+    const PLAYERX_WON = 'PLAYERX_WON';
+    const PLAYERO_WON = 'PLAYERO_WON';
+    const TIE = 'TIE';
+
+    const winningConditions = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    function handleResultValidation() {
+        let roundWon = false;
+        for (let i = 0; i <= 7; i++) {
+            const winCondition = winningConditions[i];
+            const a = board[winCondition[0]];
+            const b = board[winCondition[1]];
+            const c = board[winCondition[2]];
+            if (a === '' || b === '' || c === '') {
+                continue;
+            }
+            if (a === b && b === c) {
+                roundWon = true;
+                break;
+            }
+        }
+
+    if (roundWon) {
+            announce(currentPlayer === 'X' ? PLAYERX_WON : PLAYERO_WON);
+            isGameActive = false;
+            return;
+        }
+
+    if (!board.includes(''))
+        announce(TIE);
+    }
+
+    const announce = (type) => {
+        switch(type){
+            case PLAYERO_WON:
+                alert('O Won')
+                break;  
+            case PLAYERX_WON:
+                alert('X Won')
+                break;
+            case TIE:
+                alert('Tie')
+        }
+    };
+
+// ---đánh ra X VÀ O
+    const isValidAction = (cell) => {
+        if (cell.innerText === 'X' || cell.innerText === 'O'){
+            return false;
+        }
+
+        return true;
+    };
 
 
-const ĐKThắng = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-];
 
+    const updateBoard = (index) => {
+        board[index] = currentPlayer;
+    }
 
-if PLAYERX_WON = ĐKThắng;
-    dem_X = dem_X + 1
+    const changePlayer = () => {
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
 
+    const userAction = (cell, index) => {
+        if (isValidAction(cell) && isGameActive) {
+            cell.innerText = currentPlayer;
+            cell.classList.add('player' + currentPlayer);
+            updateBoard(index);
+            handleResultValidation();
+            changePlayer();
+        }
+    }
 
+    const resetBoard = () => {
+        board = ['','','','','','','','',''];
+        isGameActive= true;
+        announcer.classList.add('hide');
 
+        if (currentPlayer === 'O') {
+            changePlayer();
+        }
 
+        cells.forEach(cell => {
+            cell.innerText = '';
+            cell.classList.remove('playerX');
+            cell.classList.remove('playerO');
+        });
+    }
 
-if PLAYERO_WON = ĐKThắng;
-    dem_O = dem_O + 1
+    cells.forEach( (cell, index) => {
+        cell.addEventListener('click', () => userAction(cell, index));
+    });
+
+    resetButton.addEventListener('click',resetBoard);
+});
