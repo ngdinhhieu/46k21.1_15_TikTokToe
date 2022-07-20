@@ -1,64 +1,45 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image.png" 
-    href="https://cdn.mcr-core.com/html_game/309/main-image.jpg">
-    <title>TicTac</title>
-	<!-- CSS file Included -->
-	<link rel="stylesheet"
-		type="text/css" href="./mau.css">
-	<!-- JavaScript file included -->
-	<script src="./mau.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Tik Tok Toe</title>
 </head>
-
 <body>
-	<div id="main">
-		<h1>TIC TAC TOE</h1>
-        
-        <!-- 3*3 grid of Boxes -->
-        <input type="text" id="b1" onclick=
-            "myfunc_3(); myfunc();" readonly>
-   
-        <input type="text" id="b2" onclick=
-            "myfunc_4(); myfunc();" readonly>
-   
-        <input type="text" id="b3" onclick=
-            "myfunc_5(); myfunc();" readonly>
-        <br><br>
-   
-        <input type="text" id="b4" onclick=
-            "myfunc_6(); myfunc();" readonly>
-               
-        <input type="text" id="b5" onclick=
-            "myfunc_7(); myfunc();" readonly>
-   
-        <input type="text" id="b6" onclick=
-            "myfunc_8(); myfunc();" readonly>
-        <br><br>
-   
-        <input type="text" id="b7" onclick=
-            "myfunc_9(); myfunc();" readonly>
-   
-        <input type="text" id="b8" onclick=
-            "myfunc_10();myfunc();" readonly>
-   
-        <input type="text" id="b9" onclick=
-            "myfunc_11();myfunc();" readonly>
-   
-        <!-- Grid end here  -->
-        <br><br>
-        <!-- Button to reset game -->
-        <button id="reset" onclick="myfunc_2()">RESET</button>
-   
-        <br><br>
-        <!-- Space to show player turn -->
-        <p id="print"></p>
+    <div id="container">
+        <div id="score">
+            <span id="score_X">0</span>
+            <span id="score_O">0</span>
+        </div>
 
+        <div id="turns">
+            <div id="rectangle">
+                <button id="turnsX">0</button>
+            </div>
+            <div id="rectangle">
+                <button id="turnsO">0</button>
+            </div>
+        </div>
+
+        <div class="display announcer hide"></div>
+        
+        <div id="version2">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+
+        <button id="reset" onclick="resetGame()">Reset</button>
     </div>
+    <button id="restart">Restart</button>
+    <script src="./js/index.js"></script>
 </body>
-   
 </html>
