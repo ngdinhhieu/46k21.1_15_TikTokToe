@@ -9,37 +9,38 @@
 </head>
 <body>
     <div id="container">
-        <div id="version2">
-            <div class="item1"></div>
-            <div class="item2"></div>
-            <div class="item3"></div>  
-            <div class="item4"></div>
-            <div class="item5"></div>
-            <div class="item6"></div>
-            <div class="item7"></div>
-            <div class="item8"></div>  
-            <div class="item9"></div>
+        <div id="score">
+            <span id="score_X">0</span>
+            <span id="score_O">0</span>
         </div>
-        <div id="buttons">
 
+        <div id="turns">
             <div id="rectangle">
-                <button id="X">X</button>
+                <button id="turnsX">0</button>
             </div>
+            <div id="rectangle">
+                <button id="turnsO">0</button>
+            </div>
+        </div>
+        <div class="display announcer hide"></div>
+        <div class="turn">
+            Player <span class="display-player playerX">X</span>'s turn
+        </div>
+        <div id="version2">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
 
-            <div id="rectangle">
-                <button id="O">O</button>
-            </div>
-
-            <div id="rectangle">
-                <button id="five1">5</button>
-            </div>
-
-            <div id="rectangle">
-                <button id="five2">5</button>
-            </div>
-            
-        </div> 
+        <button id="reset" onclick="resetGame()">Reset</button>
     </div>
-    <script src="./index.js"></script>
+    <button id="restart">Restart</button>
+    <script src="./js/index.js"></script>
 </body>
 </html>
