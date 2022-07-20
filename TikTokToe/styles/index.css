@@ -1,13 +1,66 @@
 *{
     margin: 0;
     padding: 0;
+    text-align: center;
 }
+
 #container {
     position: absolute;
     width: 100vw;
     height: 100vh;
     display: flex;
-    background-color: #F5F5F5;
+    background-color: gainsboro;
+    font-family: Helvetica;
+    font-weight: 750;
+}
+
+#score {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+    width: 200px;
+    height: 100px;
+    background-color: #FFFFFF;
+    margin: 30px;
+    border-radius: 50px;
+}
+#score > span{
+    font-size: 60px;
+    margin-top: 20px;
+}
+#score_X {
+    color: #2C8DFF;
+}
+#score_O {
+    color: #FF4F4F;
+}
+
+#turns{
+    display: grid;
+    grid-template-columns: auto;
+    width: 150px;
+    height: 370px;
+    gap: 70px;
+    margin-top: 250px;
+}
+#rectangle {
+    background-color: #FFFFFF;
+}
+#rectangle > button {
+    margin: 30px;
+    border-radius: 50%;
+    border-width: 10px;
+    font-size: 65px;
+    width: 90px;
+    height: 90px;
+}
+#turnsX {
+    color: #2C8DFF;
+    border-color: #2C8DFF;
+}
+#turnsO {
+    color:#FF4F4F;
+    border-color: #FF4F4F;
 }
 
 #version2 {
@@ -18,63 +71,54 @@
     width: 470px;
     height: 470px;
     padding: 15px;
-    margin: 150px 0px 0px 280px;
+    margin: 180px 0px 0px 150px;
 }
-
 #version2 > div {
     background-color: #FFFFFF;
-    text-align: center;
+    border: 0;
     cursor: pointer;
 }
 
-#buttons {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 70px;
-    width: 370px;
-    height: 370px;
-    padding: 220px 0px 220px 100px;
-}
-
-#rectangle {
-    background-color: #FFFFFF;
-    border: 0px;
-}
-
 button {
-    font-family: Helvetica;
     font-weight: 750;
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
     background-color: #FFFFFF;
-    margin: 30px;
 }
 
-#X {
-    color:#2C8DFF;
-    font-size: 86px;
-    border: 0;
+#reset{
+    border-radius: 20px;
+    font-size: 20px;
+    border-width: 5px;
+    margin: 30px 0px 0px 100px;
+    cursor: pointer;
 }
 
-#O {
-    color:#FF4F4F;
-    font-size: 86px;
-    border: 0;
+.cell {
+    font-size: 120px;
+    width: 150px;
+    height: 150px;
 }
 
-#five1 {
-    font-size: 65px;
+.playerX {
     color: #2C8DFF;
-    border-color: #2C8DFF;
-    border-radius: 50%;
-    border-width: 10px;
 }
 
-#five2 {
-    font-size: 65px;
-    color:#FF4F4F;
-    border-color: #FF4F4F;
-    border-radius: 50%;
-    border-width: 10px;
+.playerO {
+    color: #FF4F4F;
 }
 
+.hide {
+    display: none;
+}
+
+.display {
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.turn {
+    margin-left: 50px;
+    font-size: 30px;
+
+}
