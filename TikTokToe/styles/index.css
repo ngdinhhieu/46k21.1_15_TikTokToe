@@ -1,15 +1,21 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: auto;
     text-align: center;
 }
 
+h1{
+    color: red;
+    font-size: 3.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 2rem;
+    text-shadow: 3px 3px 4px gray;
+}
 #container {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw;
+    height: 100vh; */
     display: flex;
-    background-color: gainsboro;
     font-family: Helvetica;
     font-weight: 750;
 }
@@ -20,8 +26,8 @@
     gap: 5px;
     width: 200px;
     height: 100px;
-    background-color: #FFFFFF;
-    margin: 30px;
+    background-color: #fcf0f0;
+    margin: 1rem;
     border-radius: 50px;
 }
 #score > span{
@@ -39,12 +45,12 @@
     display: grid;
     grid-template-columns: auto;
     width: 150px;
-    height: 370px;
-    gap: 70px;
-    margin-top: 250px;
+    height: 300px;
+    gap: 30px;
+    margin: 100px 60px 20px 0px;
 }
 #rectangle {
-    background-color: #FFFFFF;
+    background-color: white;
 }
 #rectangle > button {
     margin: 30px;
@@ -67,31 +73,29 @@
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
-    background-color: #FFE79E;
+    background-color: black;
     width: 470px;
     height: 470px;
-    padding: 15px;
-    margin: 180px 0px 0px 150px;
+    /* padding: 15px; */
+    margin: auto;
 }
 #version2 > div {
-    background-color: #FFFFFF;
+    background-color:rgb(220, 241, 255);
     border: 0;
     cursor: pointer;
 }
 
-button {
-    font-weight: 750;
-    width: 150px;
-    height: 150px;
-    background-color: #FFFFFF;
-}
-
 #reset{
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 20px;
-    border-width: 5px;
-    margin: 30px 0px 0px 100px;
+    border: 2px red;
+    margin: 20px 0px 0px 80px;
     cursor: pointer;
+    color: lightcyan;
+    background-color:rgb(200, 15, 15);
+    height: 40px;
+    width: 90px;
+    font-family: cursive;
 }
 
 .cell {
@@ -101,7 +105,7 @@ button {
 }
 
 .playerX {
-    color: #2C8DFF;
+    color: dodgerblue;
 }
 
 .playerO {
@@ -114,11 +118,6 @@ button {
 
 .display {
     font-size: 30px;
-    margin-top: 50px;
-}
-
-.turn {
-    font-size: 50px;
-    color: #d7a62f;
-    margin: 20px auto;
+    margin-bottom: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
